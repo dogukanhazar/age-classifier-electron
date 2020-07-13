@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>Classifier Page</title>
+    <link rel="stylesheet" href="../styles/classifier.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-2 mb-2 justify-content-between">
+            <div class="col-auto align-self-center">
+                <i class="fa fa-angle-double-left" aria-hidden="true" id="arrowLeft"></i>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-primary" id="saveExitBtn">Save&Exit</button>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-2">
+            <img src="" class="rounded w-50 h-50" id="rowImg">
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-6 input-group">
+                <span class="mr-2 align-self-center">Age:</span>
+                <input type="number" min="0" class="form-control" autofocus="true" placeholder="" id="ageTextArea">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="ageSaveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="row fixed-bottom justify-content-around mb-5">
+            <div class="col-auto">
+                <button type="button" id="prevBtn" class="btn btn-outline-secondary mx-auto">Prev</button>
+            </div>
+            <div class="col-auto align-self-center">
+                <span id="currentImgCount"></span>
+                <span>/</span>
+                <span id="totalImgCount"></span>
+            </div>
+            <div class="col-auto">
+                <button type="button" id="nextBtn" class="btn btn-outline-secondary mx-auto">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/classifier.js"></script>
+</body>
+
+</html>

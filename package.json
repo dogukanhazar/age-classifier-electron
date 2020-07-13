@@ -1,0 +1,39 @@
+{
+  "name": "age-classifier",
+  "productName": "Age Classifier",
+  "version": "1.0.0",
+  "description": "Places images in folders by age.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-installer": "electron-builder"
+  },
+  "build": {
+    "appId": "age-classifier",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icons/age-classifier.ico",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "installerIcon": "assets/icons/age-classifier.ico",
+      "uninstallerIcon": "assets/icons/age-classifier.ico",
+      "uninstallDisplayName": "Age Classifier",
+      "license": "LICENSE",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "keywords": [],
+  "author": "Dogukan Hazar",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.1.0",
+    "electron-builder": "^22.7.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0"
+  }
+}
