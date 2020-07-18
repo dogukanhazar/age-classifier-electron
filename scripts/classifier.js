@@ -86,7 +86,7 @@ let changeAge = () => {
 	if (!(ageTextArea.value === '')) {
 		if (parseInt(ageTextArea.value) > 0) {
 			ageTextArea.placeholder = ageTextArea.value;
-			imagesArray[i].toFolder = ageTextArea.value;
+			imagesArray[i].toNewFolder = ageTextArea.value;
 			ageTextArea.value = '';
 			showMessage('info', 'Age Changed.');
 		} else {

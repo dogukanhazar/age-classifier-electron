@@ -13,27 +13,34 @@ const createMainWindow = () => {
 		minHeight: 600,
 		autoHideMenuBar: true,
 		icon: path.join(__dirname, 'assets', 'icons', 'age-classifier.ico'),
+		// for dont show until ready
 		show: false,
 
 		webPreferences: {
+			// to use node in the renderer
 			nodeIntegration: true,
+			// to use electron.remote in the renderer
 			enableRemoteModule: true,
 		},
 	});
 
 	// mainWindow.webContents.openDevTools();
 	mainWindow.loadFile(path.join(__dirname, 'pages', 'index.html'));
+	// show when window is ready
 	mainWindow.once('ready-to-show', () => {
 		mainWindow.show();
 	});
 };
 
+// function to run after the app is ready
 app.on('ready', () => {
 	createMainWindow();
 
 	// folderpath data listener from mainWindow(index.html) to main.js(electron). "data" is path for folder
 	ipcMain.on('folder-path', (event, data) => {
+		// path for selected folder
 		mainFolderPath = data;
+		// create imagesArray from all image in selected folder
 		imagesArray = filterImgFile(data);
 	});
 
@@ -64,14 +71,18 @@ app.on('ready', () => {
 			.then(({ response }) => {
 				if (response === 0) {
 					// yes button pressed
+					// create newImagesArray with newPath and newToFolderPath keys
 					newImagesArray = newImgPath(data);
+					// move images from old path to new path and then clear all empty folders in main path (selected folder)
 					moveImages(newImagesArray).then((resolve) => {
 						if (resolve) {
 							setTimeout(() => {
 								clearEmptyFolder(mainFolderPath);
 							}, 1000);
 							setTimeout(() => {
+								// function worked twice because node running async so does not clear empty folder after moving images
 								clearEmptyFolder(mainFolderPath);
+								// app quit, close all window, clear mainWindow
 								outOfTheApp();
 							}, 1000);
 						}
@@ -88,11 +99,16 @@ app.on('window-all-closed', () => {
 });
 
 // custom functions
+// create newImagesArray with newPath and newToFolderPath keys
 let newImgPath = (imagesArray) => {
 	for (i in imagesArray) {
-		let splitPath = imagesArray[i].toFolderPath.split(path.sep).slice();
-		splitPath[splitPath.length - 1] = imagesArray[i].toFolder;
-		newFolderPath = splitPath.join(path.sep);
+		if (imagesArray[i].toFolderPath === mainFolderPath) {
+			newFolderPath = path.join(mainFolderPath, imagesArray[i].toNewFolder);
+		} else {
+			let splitPath = imagesArray[i].toFolderPath.split(path.sep).slice(0, -1);
+			basePath = splitPath.join(path.sep);
+			newFolderPath = path.join(basePath, imagesArray[i].toNewFolder);
+		}
 		newFilePath = path.join(
 			newFolderPath,
 			imagesArray[i].name + imagesArray[i].ext
@@ -103,12 +119,16 @@ let newImgPath = (imagesArray) => {
 	return imagesArray;
 };
 
+// move images from old path to new path
 let moveImages = (newImagesArray) => {
 	newImagesArray.forEach((newImageObj) => {
 		fs.exists(newImageObj.newToFolderPath, (response) => {
 			if (!response) {
 				fs.mkdir(newImageObj.newToFolderPath, (error) => {
 					if (error) {
+						// does not detect the folder created in the previous loop
+						// because the works async and the error returns
+						// so if it returns an error just move image to new folder
 						if (error.code === 'EEXIST') {
 							fs.rename(newImageObj.path, newImageObj.newPath, (error) => {
 								if (error) {
@@ -136,6 +156,7 @@ let moveImages = (newImagesArray) => {
 	return Promise.resolve(true);
 };
 
+// detect all empty folder in mainFolderPath
 let isEmptyFolder = (dir, callback) => {
 	fs.readdirSync(dir).forEach((f) => {
 		let dirPath = path.join(dir, f);
@@ -148,6 +169,7 @@ let isEmptyFolder = (dir, callback) => {
 	});
 };
 
+// clear all empty folder in mainFolderPath using isEmptyFolder func
 let clearEmptyFolder = (mainFolderPath) => {
 	isEmptyFolder(mainFolderPath, (res) => {
 		if (res.isEmpty) {
@@ -156,6 +178,7 @@ let clearEmptyFolder = (mainFolderPath) => {
 	});
 };
 
+// stay in folder until find files and then return file paths
 let walkDir = (dir, callback) => {
 	fs.readdirSync(dir).forEach((f) => {
 		let dirPath = path.join(dir, f);
@@ -164,6 +187,7 @@ let walkDir = (dir, callback) => {
 	});
 };
 
+// create imagesArray using file paths
 let filterImgFile = (folderPath) => {
 	let imagesArray = [];
 	let i = 0;
