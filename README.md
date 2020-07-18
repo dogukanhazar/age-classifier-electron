@@ -9,7 +9,8 @@ Testler Electron v9.1.0 sürümünde yapıldı.
 
 > `Uygulama ana sayfası`
 >
-> [<img src="assets/images/index-html.png" style="display: block; margin-left: auto; margin-right: auto;" width="350">]()
+> <p align="center">
+> <img src="assets/images/index-html.png" width="350" alt="index.html"/> </p>
 
 > `"Choose" butonu ile klasör seçildikten sonra sınıflandırma sayfası`
 >
@@ -46,7 +47,8 @@ npm install
 # Uygulamayı çalıştırır
 npm start
 
-# Windows için "electron-builder" paketini kullanarak build alır. "dist" dizini altında windows için bir "Age Classifier Setup.exe" dosyası ve "win-unpacked" dizininde "Age Classifier.exe" portable çalıştırma dosyası oluşturur.
+# Windows için "electron-builder" paketini kullanarak build alır. #"dist" dizini altında windows için bir "Age Classifier Setup.exe" dosyası ve
+#"win-unpacked" dizininde "Age Classifier.exe" portable çalıştırma dosyası oluşturur.
 npm run build-installer
 ```
 
