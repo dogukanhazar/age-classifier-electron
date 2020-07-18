@@ -7,26 +7,20 @@ Testler Electron v9.1.0 sürümünde yapıldı.
 > - `Klavyeden "sağ", "sol" yön okları ile veya "Prev", "Next" butonları ile resimler arası geçiş yapılabilir.`
 > - `Klavyeden "Enter" tuşu ile veya "Save" butonu ile girilen yaş kaydedilebilir.`
 
-> `Uygulama ana sayfası`
->
-> <p align="center">
-> <img src="assets/images/index-html.png" width="350" alt="index.html"/> </p>
+> <p align="center">Uygulama ana sayfası</p>
+> <p align="center"><img src="assets/images/index-html.png" width="350" alt="index.html"/></p>
 
-> `"Choose" butonu ile klasör seçildikten sonra sınıflandırma sayfası`
->
-> [<img src="assets/images/classifier-html.png" style="display: block; margin-left: auto; margin-right: auto;" width="350">]()
+> <p align="center">"Choose" butonu ile klasör seçildikten sonra sınıflandırma sayfası</p>
+> <p align="center"><img src="assets/images/classifier-html.png" width="350" alt="classifier.html"/></p>
 
-> `Yaş bilgisi girilip "Save" butonu veya klavyeden "Enter" tuşu ile yaş değiştirilme bilgi diyaloğu`
->
-> [<img src="assets/images/age-changed.png" style="display: block; margin-left: auto; margin-right: auto;" width="350">]()
+> <p align="center">Yaş bilgisi girilip "Save" butonu veya klavyeden "Enter" tuşu ile yaş değiştirilme bilgi diyaloğu</p>
+> <p align="center"><img src="assets/images/age-changed.png" width="350" alt="age-changed"/></p>
 
-> `Yanlış girilen yaş (-8 vb.) bilgisi sonrası hata diyaloğu`
->
-> [<img src="assets/images/wrong-age.png" style="display: block; margin-left: auto; margin-right: auto;" width="350">]()
+> <p align="center">Yanlış girilen yaş (-8 vb.) bilgisi sonrası hata diyaloğu</p>
+> <p align="center"><img src="assets/images/wrong-age.png" width="350" alt="wrong-age"/></p>
 
-> `"Save&Exit" butonu ile sınıflandırmayı bitirmek, resimleri klasörlere taşımak, boş klasörleri temizlemek ve uygulamadan çıkış yapmak için diyalog penceresi`
->
-> [<img src="assets/images/quit.png" style="display: block; margin-left: auto; margin-right: auto;" width="350">]()
+> <p align="center">"Save&Exit" butonu ile sınıflandırmayı bitirmek, resimleri klasörlere taşımak, boş klasörleri temizlemek ve uygulamadan çıkış yapmak için diyalog penceresi</p>
+> <p align="center"><img src="assets/images/quit.png" width="350" alt="quit"/></p>
 
 ## Kullanım
 
