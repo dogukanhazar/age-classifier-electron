@@ -1,4 +1,4 @@
-b# age-classifier-electron
+# age-classifier-electron
 
 Seçilen klasördeki tüm resimleri, girilen değere (yaş) göre klasörleyen, sınıflandıran Electron uygulaması.:open_file_folder:
 
