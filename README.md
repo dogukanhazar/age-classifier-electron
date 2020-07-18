@@ -1,4 +1,4 @@
-# age-classifier-electron
+b# age-classifier-electron
 
 Seçilen klasördeki tüm resimleri, girilen değere (yaş) göre klasörleyen, sınıflandıran Electron uygulaması.:open_file_folder:
 
@@ -8,19 +8,19 @@ Testler Electron v9.1.0 sürümünde yapıldı.
 > - `Klavyeden "Enter" tuşu ile veya "Save" butonu ile girilen yaş kaydedilebilir.`
 
 > <p align="center">Uygulama ana sayfası</p>
-> <p align="center"><img src="assets/images/index-html.png" width="350" alt="index.html"/></p>
+> <p align="center"><img src="assets/images/index-html.png" width="350" alt="index.html"/></p></br>
 
 > <p align="center">"Choose" butonu ile klasör seçildikten sonra sınıflandırma sayfası</p>
-> <p align="center"><img src="assets/images/classifier-html.png" width="350" alt="classifier.html"/></p>
+> <p align="center"><img src="assets/images/classifier-html.png" width="350" alt="classifier.html"/></p></br>
 
 > <p align="center">Yaş bilgisi girilip "Save" butonu veya klavyeden "Enter" tuşu ile yaş değiştirilme bilgi diyaloğu</p>
-> <p align="center"><img src="assets/images/age-changed.png" width="350" alt="age-changed"/></p>
+> <p align="center"><img src="assets/images/age-changed.png" width="350" alt="age-changed"/></p></br>
 
 > <p align="center">Yanlış girilen yaş (-8 vb.) bilgisi sonrası hata diyaloğu</p>
-> <p align="center"><img src="assets/images/wrong-age.png" width="350" alt="wrong-age"/></p>
+> <p align="center"><img src="assets/images/wrong-age.png" width="350" alt="wrong-age"/></p></br>
 
 > <p align="center">"Save&Exit" butonu ile sınıflandırmayı bitirmek, resimleri klasörlere taşımak, boş klasörleri temizlemek ve uygulamadan çıkış yapmak için diyalog penceresi</p>
-> <p align="center"><img src="assets/images/quit.png" width="350" alt="quit"/></p>
+> <p align="center"><img src="assets/images/quit.png" width="350" alt="quit"/></p></br>
 
 ## Kullanım
 
