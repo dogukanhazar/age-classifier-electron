@@ -41,7 +41,8 @@ npm install
 # Uygulamayı çalıştırır
 npm start
 
-# Windows için "electron-builder" paketini kullanarak build alır. #"dist" dizini altında windows için bir "Age Classifier Setup.exe" dosyası ve
+# Windows için "electron-builder" paketini kullanarak build alır. 
+#"dist" dizini altında windows için bir "Age Classifier Setup.exe" dosyası ve
 #"win-unpacked" dizininde "Age Classifier.exe" portable çalıştırma dosyası oluşturur.
 npm run build-installer
 ```
