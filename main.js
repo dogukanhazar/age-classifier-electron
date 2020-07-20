@@ -1,3 +1,13 @@
+// ///// age-classifier-electron /////
+
+// Author: Doğukan HAZAR
+// Date: 20/07/2020
+// Description:
+// This program classifies pictures into folders by age with electronjs.
+
+// github link:
+// https://github.com/dogukanhazar/age-classifier-electron
+
 const electron = require('electron');
 const { app, BrowserWindow, ipcMain, dialog } = electron;
 const path = require('path');
